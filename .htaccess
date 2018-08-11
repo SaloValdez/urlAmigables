@@ -1,0 +1,30 @@
+#-------------------------------------------------
+# Impedir la vision de los listados de un directorio
+#-------------------------------------------------
+    Options All -Indexes
+    ErrorDocument 404 /urlAmigables/404.html
+    ErrorDocument 403 /urlAmigables/procesos/403.html
+
+
+#-------------------------------------------------
+#URL AMIGABLES
+#-------------------------------------------------
+  #..primero activar RewriteEngine
+  RewriteEngine on
+
+  # RewriteCond %{REQUEST_FILENAME}.css !-d
+  # RewriteCond %{REQUEST_FILENAME}.css !-f
+
+
+  #<FilesMatch "\.(htaccess|htpasswd|ini|php|fla|js|css|txt|jpg)$ ">
+  #    Order Allow,Deny
+  #    Deny from all
+  #</FilesMatch>
+
+  RewriteRule ^(\w+)$   index.php?action=$1
+
+
+
+#-------------------------------------------------
+#instrucciones de error
+#----------------------------------------------
